@@ -4,5 +4,6 @@ services:
     restart: unless-stopped
     volumes:
       - ./hvac_zoning:/config/custom_components/hvac_zoning
+      - ./config:/config
     ports:
       - 8123:8123
