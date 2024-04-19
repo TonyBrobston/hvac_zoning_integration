@@ -3,6 +3,6 @@ services:
     image: homeassistant/home-assistant
     restart: unless-stopped
     volumes:
-      - ./hvac_zoning_integration:/config/custom_components/hvac_zoning_integration
+      - ./hvac_zoning:/config/custom_components/hvac_zoning
     ports:
       - 8123:8123
