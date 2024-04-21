@@ -1,16 +1,10 @@
 {
   "domain": "hvac_stubs",
   "name": "HVAC Stubs",
-  "codeowners": [
-    "@tonybrobston"
-  ],
-  "config_flow": true,
+  "codeowners": [],
   "dependencies": [],
-  "documentation": "https://www.home-assistant.io/integrations/hvac_stubs",
-  "homekit": {},
+  "documentation": "https://github.com/tonybrobston/hvac_zoning_integration",
   "iot_class": "local_polling",
   "requirements": [],
-  "ssdp": [],
-  "zeroconf": [],
   "version": "0.1.0"
 }
