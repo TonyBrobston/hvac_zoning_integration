@@ -9,4 +9,4 @@ services:
       - ./configuration.yaml:/config/configuration.yaml
       - ./config:/config
     ports:
-      - 8123:8123
+      - 8124:8123
