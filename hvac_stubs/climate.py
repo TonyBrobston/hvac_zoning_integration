@@ -19,6 +19,7 @@ from homeassistant.components.climate import (
     HVACAction,
     HVACMode,
 )
+from homeassistant.const import UnitOfTemperature
 
 
 def setup_platform(
