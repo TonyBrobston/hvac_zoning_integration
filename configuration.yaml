@@ -12,3 +12,6 @@ scene: !include scenes.yaml
 
 sensor:
   - platform: hvac_stubs
+
+cover:
+  - platform: hvac_stubs
