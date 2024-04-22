@@ -6,9 +6,7 @@ from homeassistant.components.cover import (
 )
 from homeassistant.const import (
     STATE_CLOSED,
-    STATE_CLOSING,
     STATE_OPEN,
-    STATE_OPENING,
 )
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
