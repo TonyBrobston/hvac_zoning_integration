@@ -30,6 +30,7 @@ def setup_platform(
 
 class Thermostat(ClimateEntity):
     def __init__(self, name: str) -> None:
+        self._attr_unique_id = name
         self._attr_name = name
         self._attr_hvac_mode = HVACMode.HEAT
         self._attr_hvac_modes = [HVACMode.HEAT, HVACMode.COOL, HVACMode.OFF]

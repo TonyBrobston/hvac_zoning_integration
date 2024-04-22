@@ -8,9 +8,11 @@ from typing import Any
 import voluptuous as vol
 
 from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME
+# from homeassistant.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME
 from homeassistant.core import HomeAssistant
 from homeassistant.exceptions import HomeAssistantError
+
+import json
 
 from .const import DOMAIN
 
@@ -19,10 +21,24 @@ _LOGGER = logging.getLogger(__name__)
 # TODO adjust the data schema to the data that you need
 STEP_USER_DATA_SCHEMA = vol.Schema(
     {
-        vol.Required("test"): bool,
-        vol.Required(CONF_HOST): str,
-        vol.Required(CONF_USERNAME): str,
-        vol.Required(CONF_PASSWORD): str,
+        vol.Required("living_room_thermostat", default=True): bool,
+        vol.Required("living_room_temperature", default=True): bool,
+        vol.Required("living_room_northeast_vent", default=True): bool,
+        vol.Required("living_room_northeast_vent", default=True): bool,
+        vol.Required("kitchen_south_vent", default=True): bool,
+        vol.Required("kitchen_northwest_vent", default=True): bool,
+        # vol.Required("basement_west_vent", default=True): bool,
+        # vol.Required("basement_northeast_vent", default=True): bool,
+        # vol.Required("basement_southeast_vent", default=True): bool,
+        # vol.Required("basement_temperature", default=True): bool,
+        # vol.Required("office_vent", default=True): bool,
+        # vol.Required("office_temperature", default=True): bool,
+        # vol.Required("guest_bedroom_vent", default=True): bool,
+        # vol.Required("guest_bedroom_temperature", default=True): bool,
+        # vol.Required("master_bedroom_vent", default=True): bool,
+        # vol.Required("master_bedroom_temperature", default=True): bool,
+        # vol.Required("upstairs_bathroom_vent", default=True): bool,
+        # vol.Required("upstairs_bathroom_temperature", default=True): bool,
     }
 )
 
@@ -55,10 +71,10 @@ async def validate_input(hass: HomeAssistant, data: dict[str, Any]) -> dict[str,
     #     your_validate_func, data[CONF_USERNAME], data[CONF_PASSWORD]
     # )
 
-    hub = PlaceholderHub(data[CONF_HOST])
-
-    if not await hub.authenticate(data[CONF_USERNAME], data[CONF_PASSWORD]):
-        raise InvalidAuth
+    # hub = PlaceholderHub(data[CONF_HOST])
+    #
+    # if not await hub.authenticate(data[CONF_USERNAME], data[CONF_PASSWORD]):
+    #     raise InvalidAuth
 
     # If you cannot connect:
     # throw CannotConnect

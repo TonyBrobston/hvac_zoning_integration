@@ -18,7 +18,7 @@ def setup_platform(
     discovery_info: DiscoveryInfoType | None = None
 ) -> None:
     add_entities([
-        TemperatureSensor("Main Floor Temperature", 71),
+        TemperatureSensor("Living Room Temperature", 71),
         TemperatureSensor("Basement Temperature", 69),
         TemperatureSensor("Office Temperature", 76),
         TemperatureSensor("Guest Bedroom Temperature", 72),
@@ -29,6 +29,7 @@ def setup_platform(
 
 class TemperatureSensor(SensorEntity):
     def __init__(self, name: str, temperature: int) -> None:
+        self._attr_unique_id = name
         self._attr_name = name
         self._attr_native_unit_of_measurement = UnitOfTemperature.FAHRENHEIT
         self._attr_device_class = SensorDeviceClass.TEMPERATURE

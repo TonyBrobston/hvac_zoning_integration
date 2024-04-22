@@ -36,6 +36,7 @@ def setup_platform(
 
 class Cover(CoverEntity):
     def __init__(self, name: str, current_cover_position: str) -> None:
+        self._attr_unique_id = name
         self._attr_name = name
         self._attr_device_class = CoverDeviceClass.DAMPER
         self._attr_current_cover_position = current_cover_position

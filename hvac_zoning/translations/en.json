@@ -11,10 +11,23 @@
         "step": {
             "user": {
                 "data": {
-                    "host": "Host",
-                    "password": "Password",
-                    "test": "Test",
-                    "username": "Username"
+                    "basement_northeast_vent": "Basement Northeast Vent",
+                    "basement_southeast_vent": "Basement Southeast Vent",
+                    "basement_temperature": "Basement Temperature",
+                    "basement_west_vent": "Basement West Vent",
+                    "guest_bedroom_temperature": "Guest Bedroom Temperature",
+                    "guest_bedroom_vent": "Guest Bedroom Vent",
+                    "kitchen_northwest_vent": "Kitchen Northwest Vent",
+                    "kitchen_south_vent": "Kitchen South Vent",
+                    "living_room_northeast_vent": "Living Room Northeast Vent",
+                    "living_room_thermostat": "Living Room Thermostat",
+                    "living_room_temperature": "Living Room Temperature",
+                    "master_bedroom_temperature": "Master Bedroom Temperature",
+                    "master_bedroom_vent": "Master Bedroom Vent",
+                    "office_temperature": "Office Temperature",
+                    "office_vent": "Office Vent",
+                    "upstairs_bathroom_temperature": "Upstairs Bathroom Temperature",
+                    "upstairs_bathroom_vent": "Upstairs Bathroom Vent"
                 }
             }
         }
