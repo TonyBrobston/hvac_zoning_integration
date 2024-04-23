@@ -12,6 +12,7 @@ from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
 from homeassistant.core import HomeAssistant
 from homeassistant.exceptions import HomeAssistantError
 from homeassistant.helpers.area_registry import AreaRegistry
+from homeassistant.helpers.entity_registry import EntityRegistry, async_entries_for_area
 
 import json
 
@@ -95,10 +96,16 @@ class ConfigFlow(ConfigFlow, domain=DOMAIN):
         self, user_input: dict[str, Any] | None = None
     ) -> ConfigFlowResult:
         """Handle the initial step."""
-        registry = AreaRegistry(self.hass)
-        await registry.async_load()
-        areas = registry.async_list_areas()
+        areaRegistry = AreaRegistry(self.hass)
+        await areaRegistry.async_load()
+        areas = areaRegistry.async_list_areas()
         _LOGGER.info(f"FOO1: {areas}");
+        print(f"FOO1: {areas}");
+        entityRegistry = EntityRegistry(self.hass)
+        await entityRegistry.async_load()
+        living_room_entities = async_entries_for_area(entityRegistry, "living_room")
+        _LOGGER.info(f"FOO2: {living_room_entities}");
+        print(f"FOO2: {living_room_entities}");
         errors: dict[str, str] = {}
         if user_input is not None:
             try:
