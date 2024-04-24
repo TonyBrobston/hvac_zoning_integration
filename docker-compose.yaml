@@ -5,6 +5,7 @@ services:
     volumes:
       - ./hvac_zoning:/config/custom_components/hvac_zoning
       - ./hvac_zoning:/usr/src/homeassistant/homeassistant/components/hvac_zoning
+      - ./tests:/usr/src/homeassistant/tests
       - ./hvac_stubs:/usr/src/homeassistant/homeassistant/components/hvac_stubs
       - ./configuration.yaml:/config/configuration.yaml
       - ./config:/config
