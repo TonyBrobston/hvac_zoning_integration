@@ -14,3 +14,9 @@ The idea is to take this POC I wrote and write it as a Home Assistant Integratio
 - Figure out how to import a def from `hvac_stubs` into `tests/components/hvac_stubs`.
 - Build config flow views for sensor selection, cover selection, and climate selection.
 - Figure out how to store selections to be used later.
+
+## Development
+- Start home assistant and follow logs: `docker-compose up -d && docker-compose logs -f`
+- Restart home assistant and follow logs: `docker-comopose restart && docker-comopse logs -f`
+- Run tests: `docker-compose exec home-assistant pytest`
+- Scaffold an integration: `docker-compose exec home-assistant python3 -m script.scaffold integration`

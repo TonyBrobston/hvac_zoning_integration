@@ -2,6 +2,7 @@ services:
   home-assistant:
     image: homeassistant/home-assistant
     restart: unless-stopped
+    working_dir: /usr/src/homeassistant
     volumes:
       - ./hvac_zoning:/config/custom_components/hvac_zoning
       - ./hvac_zoning:/usr/src/homeassistant/homeassistant/components/hvac_zoning
