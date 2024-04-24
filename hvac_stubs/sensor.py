@@ -18,7 +18,7 @@ def setup_platform(
     discovery_info: DiscoveryInfoType | None = None
 ) -> None:
     add_entities([
-        TemperatureSensor("Living Room Temperature", 71),
+        TemperatureSensor("Main Floor Temperature", 71),
         TemperatureSensor("Basement Temperature", 69),
         TemperatureSensor("Office Temperature", 76),
         TemperatureSensor("Guest Bedroom Temperature", 72),
