@@ -70,6 +70,8 @@ def test_map_area_entries_to_id_and_name():
         )
     ]
 
+    area_entry_dict = map_area_entries_to_id_and_name(area_entries)
+
     expected_area_entry_dict = {
         'living_room': 'Living Room',
         'kitchen': 'Kitchen',
@@ -79,9 +81,6 @@ def test_map_area_entries_to_id_and_name():
         'office': 'Office',
         'upstairs_bathroom': 'Upstairs Bathroom'
     }
-
-    area_entry_dict = map_area_entries_to_id_and_name(area_entries)
-
     assert area_entry_dict == expected_area_entry_dict
 
 def test_filter_to_device_class_and_map_registry_entries_to_id_and_name():
@@ -121,14 +120,13 @@ def test_filter_to_device_class_and_map_registry_entries_to_id_and_name():
         )
     ]
 
+    registry_dict = filter_to_device_class_and_map_registry_entries_to_id_and_name(
+        registry_entries, device_class
+    )
+
     expected_dict = {
         '800d6dcc0aef4b6a42476de9ff1403ad': 'Basement West Vent',
         '0ae78e2e8f74045281a8ed154cd2b06d': 'Basement Northeast Vent',
         '16d81f78e8b7917950f984277ba4feff': 'Basement Southeast Vent'
     }
-
-    registry_dict = filter_to_device_class_and_map_registry_entries_to_id_and_name(
-        registry_entries, device_class
-    )
-
     assert registry_dict == expected_dict
