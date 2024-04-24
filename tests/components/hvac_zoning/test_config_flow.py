@@ -1,6 +1,8 @@
 from homeassistant.helpers.area_registry import AreaEntry
 from homeassistant.helpers.entity_registry import RegistryEntry
 
+from homeassistant.components.hvac_zoning.config_flow import map_to_id_and_name
+
 def test_map_to_dict_of_name_and_id():
     area_entries = [AreaEntry(name='Living Room', normalized_name='livingroom', aliases=set(), floor_id=None, icon=None,
                            id='living_room', labels=set(), picture=None),
@@ -17,19 +19,19 @@ def test_map_to_dict_of_name_and_id():
                  AreaEntry(name='Upstairs Bathroom', normalized_name='upstairsbathroom', aliases=set(), floor_id=None,
                            icon=None, id='upstairs_bathroom', labels=set(), picture=None)]
 
-    expected_dict = {
-        'Living Room': 'living_room',
-        'Kitchen': 'kitchen',
-        'Master Bedroom': 'bedroom',
-        'Basement': 'basement',
-        'Guest Bedroom': 'guest_bedroom',
-        'Office': 'office',
-        'Upstairs Bathroom': 'upstairs_bathroom'
+    expected_area_entry_dict = {
+        'living_room': 'Living Room',
+        'kitchen': 'Kitchen',
+        'bedroom': 'Master Bedroom',
+        'basement': 'Basement',
+        'guest_bedroom': 'Guest Bedroom',
+        'office': 'Office',
+        'upstairs_bathroom': 'Upstairs Bathroom'
     }
 
-    area_dict = {entry.name: entry.id for entry in area_entries}
+    area_entry_dict = map_to_id_and_name(area_entries)
 
-    assert area_dict == expected_dict
+    assert area_entry_dict == expected_area_entry_dict
 
 def test_map_foo():
     original_device_class = 'damper'

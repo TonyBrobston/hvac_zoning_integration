@@ -132,3 +132,5 @@ class CannotConnect(HomeAssistantError):
 class InvalidAuth(HomeAssistantError):
     """Error to indicate there is invalid auth."""
 
+def map_to_id_and_name(area_entries):
+    return {entry.id: entry.name for entry in area_entries}
