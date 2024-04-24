@@ -21,7 +21,7 @@ def setup_platform(
 ) -> None:
     add_entities([
         Cover("Living Room Northeast Vent", STATE_CLOSED),
-        Cover("Living Room Northeast Vent", STATE_OPEN),
+        Cover("Living Room Southeast Vent", STATE_OPEN),
         Cover("Kitchen South Vent", STATE_OPEN),
         Cover("Kitchen Northwest Vent", STATE_CLOSED),
         Cover("Basement West Vent", STATE_CLOSED),

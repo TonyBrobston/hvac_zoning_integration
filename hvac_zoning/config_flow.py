@@ -103,7 +103,7 @@ class ConfigFlow(ConfigFlow, domain=DOMAIN):
         print(f"FOO1: {areas}");
         entityRegistry = EntityRegistry(self.hass)
         await entityRegistry.async_load()
-        living_room_entities = async_entries_for_area(entityRegistry, "living_room")
+        living_room_entities = async_entries_for_area(entityRegistry, "basement")
         _LOGGER.info(f"FOO2: {living_room_entities}");
         print(f"FOO2: {living_room_entities}");
         errors: dict[str, str] = {}
@@ -131,3 +131,4 @@ class CannotConnect(HomeAssistantError):
 
 class InvalidAuth(HomeAssistantError):
     """Error to indicate there is invalid auth."""
+
