@@ -98,7 +98,7 @@ class ConfigFlow(ConfigFlow, domain=DOMAIN):
         """Handle the initial step."""
         areaRegistry = AreaRegistry(self.hass)
         await areaRegistry.async_load()
-        areas = areaRegistry.async_list_areas()
+        areas = list(areaRegistry.async_list_areas())
         _LOGGER.info(f"FOO1: {areas}");
         print(f"FOO1: {areas}");
         entityRegistry = EntityRegistry(self.hass)
