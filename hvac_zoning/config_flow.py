@@ -132,5 +132,14 @@ class CannotConnect(HomeAssistantError):
 class InvalidAuth(HomeAssistantError):
     """Error to indicate there is invalid auth."""
 
-def map_to_id_and_name(area_entries):
+def map_area_entries_to_id_and_name(area_entries):
     return {entry.id: entry.name for entry in area_entries}
+
+def filter_to_device_class_and_map_registry_entries_to_id_and_name(
+        registry_entries, device_class
+):
+    return {
+        entry.id: entry.original_name
+        for entry in registry_entries
+        if entry.original_device_class == device_class
+    }
