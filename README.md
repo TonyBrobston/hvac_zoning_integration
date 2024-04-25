@@ -22,7 +22,7 @@ The idea is to take this POC I wrote and write it as a Home Assistant Integratio
     ```
 - Restart home assistant and follow logs: 
     ```
-    docker-comopose restart && docker-comopse logs -f
+    docker-compose restart && docker-comopse logs -f
     ```
 - Run tests: 
     ```
@@ -30,7 +30,7 @@ The idea is to take this POC I wrote and write it as a Home Assistant Integratio
     ```
 - Scaffold an integration: 
     ```
-    docker-comp1ose exec home-assistant python3 -m script.scaffold integration
+    docker-compose exec home-assistant python3 -m script.scaffold integration
     ```
 - Generate translations: 
     ```
