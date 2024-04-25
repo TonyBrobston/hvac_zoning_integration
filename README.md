@@ -18,21 +18,21 @@ The idea is to take this POC I wrote and write it as a Home Assistant Integratio
 ## Development
 - Start home assistant and follow logs: 
     ```
-    docker-compose up -d && docker-compose logs -f
+    docker compose up -d && docker compose logs -f
     ```
 - Restart home assistant and follow logs: 
     ```
-    docker-compose restart && docker-comopse logs -f
+    docker compose restart && docker compose logs -f
     ```
 - Run tests: 
     ```
-    docker-compose exec home-assistant pytest
+    docker compose exec home-assistant pytest
     ```
 - Scaffold an integration: 
     ```
-    docker-compose exec home-assistant python3 -m script.scaffold integration
+    docker compose exec home-assistant python3 -m script.scaffold integration
     ```
 - Generate translations: 
     ```
-    docker-compose exec home-assistant python3 -m script.translations develop
+    docker compose exec home-assistant python3 -m script.translations develop
     ```
