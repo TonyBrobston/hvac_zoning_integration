@@ -16,7 +16,23 @@ The idea is to take this POC I wrote and write it as a Home Assistant Integratio
 - Figure out how to store selections to be used later.
 
 ## Development
-- Start home assistant and follow logs: `docker-compose up -d && docker-compose logs -f`
-- Restart home assistant and follow logs: `docker-comopose restart && docker-comopse logs -f`
-- Run tests: `docker-compose exec home-assistant pytest`
-- Scaffold an integration: `docker-compose exec home-assistant python3 -m script.scaffold integration`
+- Start home assistant and follow logs: 
+    ```
+    docker-compose up -d && docker-compose logs -f
+    ```
+- Restart home assistant and follow logs: 
+    ```
+    docker-comopose restart && docker-comopse logs -f
+    ```
+- Run tests: 
+    ```
+    docker-compose exec home-assistant pytest
+    ```
+- Scaffold an integration: 
+    ```
+    docker-comp1ose exec home-assistant python3 -m script.scaffold integration
+    ```
+- Generate translations: 
+    ```
+    docker-compose exec home-assistant python3 -m script.translations develop
+    ```
